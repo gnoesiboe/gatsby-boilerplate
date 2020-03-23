@@ -23,6 +23,14 @@
     "@types/node": "^13.9.3",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
@@ -36,6 +44,8 @@
     "dev:build:watch": "gatsby develop",
     "prettier": "prettier 'src/**/*.{js,jsx,json,md}'",
     "prettier:write": "npm run prettier -- --write",
+    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:js:fix": "npm run lint:js -- --fix",
     "prod:build": "gatsby build",
     "prod:serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -51,10 +61,11 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit": "npm run typescript:validate && lint-staged"
+      "pre-commit": "npm run typescript:validate && lint-staged"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,md}": "prettier --write"
+    "src/**/*.{js,jsx,ts,tsx,json,md}": "prettier --write",
+    "src/**/*.{js,jsx,ts,tsx}": "npm run lint:js"
   }
 }
