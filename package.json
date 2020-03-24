@@ -48,6 +48,7 @@
     "lint:js:fix": "npm run lint:js -- --fix",
     "prod:build": "gatsby build",
     "prod:serve": "gatsby serve",
+    "prod:deploy": "npm run prod:build && firebase deploy",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "typescript:validate": "tsc --noEmit"
