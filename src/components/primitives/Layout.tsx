@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react';
+import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import Header from './Header';
 import './Layout.css';
 
 type Props = {
-    children?: React.ReactChild | React.ReactChild[];
+    children: ReactNode;
 };
 
 const Layout = ({ children }: Props) => {
