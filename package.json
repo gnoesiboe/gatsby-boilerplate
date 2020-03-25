@@ -25,6 +25,7 @@
     "sass": "^1.26.3"
   },
   "devDependencies": {
+    "@freshheads/maatcss": "^1.0.3",
     "@graphql-codegen/cli": "^1.13.1",
     "@graphql-codegen/introspection": "^1.13.1",
     "@graphql-codegen/typescript": "^1.13.1",

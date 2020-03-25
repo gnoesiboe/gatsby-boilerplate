@@ -1,3 +1,25 @@
-body {
-    background-color: #fefefe;
-}
+// Settings
+@import '~@freshheads/maatcss/settings/breakpoints';
+@import 'settings/colors';
+
+// Libs
+@import '~sass-mq';
+@import '~normalize.css';
+
+// Tools
+@import '~@freshheads/maatcss/tools/button-variant';
+
+// Generic
+@import '~@freshheads/maatcss/generic/reboot';
+@import '~@freshheads/maatcss/generic/toplevel';
+@import '~@freshheads/maatcss/generic/typography';
+
+// Layout
+@import '~@freshheads/maatcss/layout/container';
+@import '~@freshheads/maatcss/layout/layout';
+@import '~@freshheads/maatcss/layout/layout-sizing';
+@import '~@freshheads/maatcss/layout/layout-align';
+
+// Components
+@import '~@freshheads/maatcss/components/button';
+@import 'components/header';
