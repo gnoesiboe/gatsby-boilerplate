@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { get } from 'lodash';
 import { Locale } from '../model/types';
 import { Document } from '@contentful/rich-text-types';
 import PlatformDetail from '../components/platformDetail/PlatformDetail';
+import { PlatformDetailQuery } from '../graphql';
 
 export type PlatformDetails = {
     id: string;
@@ -15,9 +15,7 @@ export type PlatformDetails = {
 };
 
 type Props = {
-    data: {
-        contentfulPlatform: PlatformDetails;
-    };
+    data: PlatformDetailQuery;
     pathContext: {
         locale: Locale;
         slug: string;
@@ -25,7 +23,7 @@ type Props = {
 };
 
 const PlatformDetailDataProvider = ({ data, pathContext }: Props) => {
-    const details = get(data, 'contentfulPlatform') as PlatformDetails;
+    const details = data.contentfulPlatform as PlatformDetails;
 
     return <PlatformDetail details={details} locale={pathContext.locale} />;
 };
@@ -33,7 +31,7 @@ const PlatformDetailDataProvider = ({ data, pathContext }: Props) => {
 export default PlatformDetailDataProvider;
 
 export const query = graphql`
-    query($locale: String!, $slug: String!) {
+    query PlatformDetail($locale: String!, $slug: String!) {
         contentfulPlatform(slug: { eq: $slug }, node_locale: { eq: $locale }) {
             id
             title

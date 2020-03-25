@@ -22,6 +22,12 @@ See the `.env.example` file for the required keys in it.
     npm run dev:build:watch
     ```
 
+-   Generate or update the GraphQL Typescript types and graphql.json:
+
+    ```bash
+    npm run graphql:generate-typescript-types-and-config
+    ```
+
 -   Reformat code in `src` folder:
 
     ```bash
