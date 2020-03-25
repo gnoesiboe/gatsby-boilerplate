@@ -2,6 +2,18 @@
 
 Development-ready boilerplate for Gatsby development.
 
+## Environment variables
+
+Before you are able to run this application locally or in production, make sure to add a `.env`-file with the required environment params. De environment file should be named like:
+
+`.env.{environment}`
+
+(Where `{environment}` should be replaced with either 'development' or 'production')
+
+See the `.env.example` file for the required keys in it.
+
+**The `.env.*` files should not be committed to git, as they contain secrets.**
+
 ## Development
 
 -   Build and service through web server + re-build on file change:

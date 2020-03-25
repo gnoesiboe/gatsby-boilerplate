@@ -1,3 +1,10 @@
+/* eslint-disable @typescript-eslint/camelcase */
+
+// load environment files
+require('dotenv').config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
     siteMetadata: {
         title: `Gatsby boilerplate`,
