@@ -12,6 +12,7 @@
     "gatsby-plugin-manifest": "^2.3.2",
     "gatsby-plugin-offline": "^3.1.1",
     "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-source-contentful": "^2.2.4",
@@ -20,7 +21,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "sass": "^1.26.3"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.13.1",
