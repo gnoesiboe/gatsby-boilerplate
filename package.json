@@ -12,6 +12,7 @@
     "gatsby-plugin-manifest": "^2.3.2",
     "gatsby-plugin-offline": "^3.1.1",
     "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sass": "^2.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-plugin-typescript": "^2.3.1",
     "gatsby-source-contentful": "^2.2.4",
@@ -20,9 +21,11 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "sass": "^1.26.3"
   },
   "devDependencies": {
+    "@freshheads/maatcss": "^1.0.3",
     "@graphql-codegen/cli": "^1.13.1",
     "@graphql-codegen/introspection": "^1.13.1",
     "@graphql-codegen/typescript": "^1.13.1",
@@ -41,6 +44,11 @@
     "husky": "^4.2.3",
     "lint-staged": "^10.0.9",
     "prettier": "^2.0.2",
+    "stylelint": "^13.2.1",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-prettier": "^1.1.2",
     "typescript": "^3.8.3"
   },
   "keywords": [
@@ -53,6 +61,8 @@
     "prettier:write": "npm run prettier -- --write",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:css": "stylelint ./src/styles",
+    "lint:css:fix": "npm run lint:css -- --fix",
     "prod:build": "gatsby build",
     "prod:serve": "gatsby serve",
     "prod:deploy": "npm run prod:build && firebase deploy",
@@ -75,6 +85,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,md}": "prettier --write",
-    "src/**/*.{js,jsx,ts,tsx}": "npm run lint:js"
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix",
+    "src/**/*.{css,scss}": "stylelint --fix"
   }
 }
