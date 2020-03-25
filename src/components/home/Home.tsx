@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import Layout from '../primitives/Layout';
 import SEO from '../primitives/Seo';
 import Image from '../primitives/Image';
+import { createPlatformOverviewPath } from '../../routing/urlGenerator';
+import { Locale } from '../../model/types';
 
 const Home = () => (
     <Layout>
@@ -11,7 +13,7 @@ const Home = () => (
         <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
             <Image />
         </div>
-        <Link to="/over-ons">Over ons</Link>
+        <Link to={createPlatformOverviewPath(Locale.nl)}>Platformen</Link>
     </Layout>
 );
 

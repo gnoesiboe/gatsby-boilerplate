@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { homePath } from '../../routing/urlGenerator';
 
 type Props = {
     siteTitle: string;
@@ -22,7 +23,7 @@ const Header = ({ siteTitle }: Props) => (
         >
             <h1 style={{ margin: 0 }}>
                 <Link
-                    to="/"
+                    to={homePath}
                     style={{
                         color: `white`,
                         textDecoration: `none`,
