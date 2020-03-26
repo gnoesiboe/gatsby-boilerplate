@@ -15,7 +15,7 @@
         }],
         "at-rule-name-space-after": "always",
         "at-rule-no-unknown": [true, {
-            "ignoreAtRules": ["each", "error", "extend", "for", "if", "else", "include", "mixin", "warn", "content"]
+            "ignoreAtRules": ["each", "error", "extend", "for", "if", "else", "include", "mixin", "warn", "content", "use"]
         }],
         "block-closing-brace-newline-before": "always",
         "block-closing-brace-newline-after": ["always", {
