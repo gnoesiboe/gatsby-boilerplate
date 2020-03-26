@@ -22,7 +22,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
-    "sass": "^1.26.3"
+    "sass": "^1.26.3",
+    "typeface-abril-fatface": "0.0.72"
   },
   "devDependencies": {
     "@freshheads/maatcss": "^1.0.3",

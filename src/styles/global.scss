@@ -2,6 +2,10 @@
 @import '~sass-mq';
 @import '~normalize.css';
 
+// Settings
+@import 'settings/colors';
+@import 'settings/typography';
+
 // Generic
 @import '~@freshheads/maatcss/generic/reboot';
 @import '~@freshheads/maatcss/generic/toplevel';
