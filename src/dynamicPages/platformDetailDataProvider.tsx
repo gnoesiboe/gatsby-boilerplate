@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Locale } from '../model/types';
 import { Document } from '@contentful/rich-text-types';
 import PlatformDetail from '../components/platformDetail/PlatformDetail';
 import { PlatformDetailQuery } from '../graphql';
@@ -16,16 +15,12 @@ export type PlatformDetails = {
 
 type Props = {
     data: PlatformDetailQuery;
-    pathContext: {
-        locale: Locale;
-        slug: string;
-    };
 };
 
-const PlatformDetailDataProvider = ({ data, pathContext }: Props) => {
+const PlatformDetailDataProvider = ({ data }: Props) => {
     const details = data.contentfulPlatform as PlatformDetails;
 
-    return <PlatformDetail details={details} locale={pathContext.locale} />;
+    return <PlatformDetail details={details} />;
 };
 
 export default PlatformDetailDataProvider;
