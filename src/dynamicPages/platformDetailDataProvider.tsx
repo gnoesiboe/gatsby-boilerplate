@@ -32,8 +32,8 @@ export default PlatformDetailDataProvider;
 
 // The $locale and $slug parameters come from the routing context. It is added in gatsby-node.js as part of a dynamic route
 export const query = graphql`
-    query PlatformDetail($locale: String!, $slug: String!) {
-        contentfulPlatform(slug: { eq: $slug }, node_locale: { eq: $locale }) {
+    query PlatformDetail($slug: String!) {
+        contentfulPlatform(slug: { eq: $slug }) {
             id
             title
             slug

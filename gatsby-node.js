@@ -6,18 +6,6 @@ const { get } = require('lodash');
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
-    ['nl', 'en'].forEach((locale) => {
-        createPage({
-            path: `/${locale}/platformen`,
-            component: path.resolve(
-                `./src/dynamicPages/platformOverviewDataProvider.tsx`
-            ),
-            context: {
-                locale,
-            },
-        });
-    });
-
     const platformDetailPages = await graphql(`
         query MyQuery {
             allContentfulPlatform {
@@ -38,18 +26,14 @@ exports.createPages = async ({ graphql, actions }) => {
     );
 
     platforms.forEach((platform) => {
-        const locale = get(platform, 'node.node_locale', 'nl');
         const slug = get(platform, 'node.slug', '');
 
         createPage({
-            path: `/${locale}/platformen/${slug}`,
+            path: `/platformen/${slug}`,
             component: path.resolve(
                 './src/dynamicPages/platformDetailDataProvider.tsx'
             ),
-            context: {
-                locale,
-                slug,
-            },
+            context: { slug },
         });
     });
 };
