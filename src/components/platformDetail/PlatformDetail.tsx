@@ -1,5 +1,5 @@
 import React from 'react';
-import { PlatformDetails } from '../../dynamicPages/platformDetailDataProvider';
+import { PlatformDetails } from '../../templates/platformDetailDataProvider';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link } from 'gatsby';
 import SEO from '../primitives/Seo';
