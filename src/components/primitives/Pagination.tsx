@@ -11,7 +11,7 @@ type Props<T> = {
 };
 
 function Pagination<T>({ collection, currentPage, onPageChange }: Props<T>) {
-    if (collection.totalNoOfResults < collection.noOfResultsPerPage) {
+    if (collection.totalNoOfResults <= collection.noOfResultsPerPage) {
         return null;
     }
 
