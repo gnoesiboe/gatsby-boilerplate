@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         createPage({
             path: `/platformen/${slug}`,
             component: path.resolve(
-                './src/dynamicPages/platformDetailDataProvider.tsx'
+                './src/templates/platformDetailDataProvider.tsx'
             ),
             context: { slug },
         });
