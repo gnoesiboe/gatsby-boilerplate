@@ -6,7 +6,7 @@ type QueryParams = {
 };
 
 const extractQueryParamFromLocation = (
-    location: WindowLocation,
+    location: WindowLocation | Location,
     key: string
 ): string | null => {
     const data = qs.parse(location.search, {
@@ -18,12 +18,11 @@ const extractQueryParamFromLocation = (
 
 export const extractNumericQueryParamFromLocation = (
     location: WindowLocation,
-    key: string,
-    defaultValue: number
-): number => {
+    key: string
+): number | null => {
     const value = extractQueryParamFromLocation(location, key);
 
-    return value ? parseInt(value) : defaultValue;
+    return value ? parseInt(value) : null;
 };
 
 export const createQueryString = (params: QueryParams) =>

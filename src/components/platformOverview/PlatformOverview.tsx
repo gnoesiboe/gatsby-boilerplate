@@ -1,19 +1,17 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { createPlatformDetailPath } from '../../routing/urlGenerator';
-import useFetchPlatformOverviewItemsOnPageChange from './hooks/useFetchPlatformOverviewItems';
 import Pagination from '../primitives/Pagination';
-import useNavigateToNextPageOnPaginationClick from './hooks/useNavigateToNextPageOnPaginationClick';
 import { PlatformOverviewItem } from '../../model/types';
+import { usePlatformOverviewContex } from '../../context/platformOverview/platformOverviewContext';
 
 const PlatformOverview = () => {
-    const { onPageChange } = useNavigateToNextPageOnPaginationClick();
-
     const {
         collection,
         isLoading,
+        onPageChange,
         currentPage,
-    } = useFetchPlatformOverviewItemsOnPageChange();
+    } = usePlatformOverviewContex();
 
     if (isLoading) {
         return <span>Loading..</span>;

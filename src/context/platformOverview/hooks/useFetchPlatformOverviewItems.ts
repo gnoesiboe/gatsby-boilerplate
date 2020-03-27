@@ -1,28 +1,14 @@
-import { useLocation } from '@reach/router';
 import { PlatformOverviewItemCollection } from './../../../model/types';
 import { fetchAll as fetchAllPlatforms } from '../../../contentful/repository/platformRepository';
 import { useState, useEffect } from 'react';
-import { extractNumericQueryParamFromLocation } from '../../../utility/queryStringUtilities';
+import { createEmpty as createEmptyCollection } from '../../../model/factory/paginatedCollectionFactory';
 
-const noOfResultsPerPage = 10;
+const noOfResultsPerPage = 1;
 
-export default function useFetchPlatformOverviewItems() {
-    const location = useLocation();
-
-    const currentPage = extractNumericQueryParamFromLocation(
-        location,
-        'page',
-        1
-    );
-
+export default function useFetchPlatformOverviewItems(currentPage: number) {
     const [collection, setCollection] = useState<
         PlatformOverviewItemCollection
-    >({
-        items: [],
-        noOfResultsPerPage: 0,
-        startIndex: 0,
-        totalNoOfResults: 0,
-    });
+    >(createEmptyCollection());
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
