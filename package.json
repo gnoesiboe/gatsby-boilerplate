@@ -61,7 +61,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev:build:watch": "gatsby develop",
+    "dev:build:watch": "gatsby develop --https",
     "prettier": "prettier 'src/**/*.{js,jsx,json,md}'",
     "prettier:write": "npm run prettier -- --write",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx ./src",
