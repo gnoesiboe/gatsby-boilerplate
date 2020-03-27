@@ -3,7 +3,7 @@ import { PlatformListResponseFields } from './../cdnApiResponseTypes.d';
 
 import { PlatformOverviewItemCollection } from './../../model/types';
 import { client } from '../client';
-import { createCollectionFromCDNApiResponse } from '../../model/factory/projectOverviewItemFactory';
+import { createCollectionFromCDNApiResponse } from '../../model/factory/platformOverviewItemFactory';
 
 export async function fetchAll(
     skip: number,
