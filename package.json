@@ -8,6 +8,7 @@
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@contentful/rich-text-types": "^14.1.0",
     "classnames": "^2.2.6",
+    "contentful": "^7.14.0",
     "gatsby": "^2.20.4",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-manifest": "^2.3.2",
@@ -20,9 +21,12 @@
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.2",
     "prop-types": "^15.7.2",
+    "qs": "^6.9.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
+    "sass": "^1.26.3",
+    "react-js-pagination": "^3.0.3",
     "sass": "^1.26.3",
     "typeface-abril-fatface": "0.0.72"
   },
@@ -34,8 +38,10 @@
     "@graphql-codegen/typescript-operations": "^1.13.1",
     "@types/classnames": "^2.2.10",
     "@types/node": "^13.9.3",
+    "@types/qs": "^6.9.1",
     "@types/react": "^16.9.25",
     "@types/react-dom": "^16.9.5",
+    "@types/react-js-pagination": "^3.0.3",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "babel-eslint": "^10.1.0",
@@ -59,7 +65,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev:build:watch": "gatsby develop",
+    "dev:build:watch": "gatsby develop --https",
     "prettier": "prettier 'src/**/*.{js,jsx,json,md}'",
     "prettier:write": "npm run prettier -- --write",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx ./src",
@@ -72,7 +78,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "typescript:validate": "tsc --noEmit",
-    "graphql:generate-typescript-types-and-config": "graphql-codegen --config graphql-codegen.yml"
+    "graphql:generate-typescript-types-and-config": "NODE_TLS_REJECT_UNAUTHORIZED=0 graphql-codegen --config graphql-codegen.yml"
   },
   "repository": {
     "type": "git",

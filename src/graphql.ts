@@ -3217,12 +3217,10 @@ export type SitePageConnectionGroupArgs = {
 
 export type SitePageContext = {
     __typename?: 'SitePageContext';
-    locale?: Maybe<Scalars['String']>;
     slug?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
-    locale?: Maybe<StringQueryOperatorInput>;
     slug?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -3326,7 +3324,6 @@ export enum SitePageFieldsEnum {
     InternalOwner = 'internal___owner',
     InternalType = 'internal___type',
     IsCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
-    ContextLocale = 'context___locale',
     ContextSlug = 'context___slug',
     PluginCreatorParentId = 'pluginCreator___parent___id',
     PluginCreatorParentParentId = 'pluginCreator___parent___parent___id',
@@ -3378,6 +3375,7 @@ export enum SitePageFieldsEnum {
     PluginCreatorPluginOptionsThemeColor = 'pluginCreator___pluginOptions___theme_color',
     PluginCreatorPluginOptionsDisplay = 'pluginCreator___pluginOptions___display',
     PluginCreatorPluginOptionsIcon = 'pluginCreator___pluginOptions___icon',
+    PluginCreatorPluginOptionsImplementationInfo = 'pluginCreator___pluginOptions___implementation___info',
     PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
     PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
     PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -3578,6 +3576,7 @@ export enum SitePluginFieldsEnum {
     PluginOptionsThemeColor = 'pluginOptions___theme_color',
     PluginOptionsDisplay = 'pluginOptions___display',
     PluginOptionsIcon = 'pluginOptions___icon',
+    PluginOptionsImplementationInfo = 'pluginOptions___implementation___info',
     PluginOptionsPathCheck = 'pluginOptions___pathCheck',
     NodeApIs = 'nodeAPIs',
     BrowserApIs = 'browserAPIs',
@@ -3714,6 +3713,7 @@ export type SitePluginPluginOptions = {
     theme_color?: Maybe<Scalars['String']>;
     display?: Maybe<Scalars['String']>;
     icon?: Maybe<Scalars['String']>;
+    implementation?: Maybe<SitePluginPluginOptionsImplementation>;
     pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -3728,7 +3728,17 @@ export type SitePluginPluginOptionsFilterInput = {
     theme_color?: Maybe<StringQueryOperatorInput>;
     display?: Maybe<StringQueryOperatorInput>;
     icon?: Maybe<StringQueryOperatorInput>;
+    implementation?: Maybe<SitePluginPluginOptionsImplementationFilterInput>;
     pathCheck?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsImplementation = {
+    __typename?: 'SitePluginPluginOptionsImplementation';
+    info?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsImplementationFilterInput = {
+    info?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -3802,7 +3812,6 @@ export type SiteTitleQueryQuery = { __typename?: 'Query' } & {
 };
 
 export type PlatformDetailQueryVariables = {
-    locale: Scalars['String'];
     slug: Scalars['String'];
 };
 
@@ -3819,23 +3828,6 @@ export type PlatformDetailQuery = { __typename?: 'Query' } & {
                 >;
             }
     >;
-};
-
-export type PlatformOverviewQueryVariables = {
-    locale: Scalars['String'];
-};
-
-export type PlatformOverviewQuery = { __typename?: 'Query' } & {
-    allContentfulPlatform: { __typename?: 'ContentfulPlatformConnection' } & {
-        edges: Array<
-            { __typename?: 'ContentfulPlatformEdge' } & {
-                node: { __typename?: 'ContentfulPlatform' } & Pick<
-                    ContentfulPlatform,
-                    'id' | 'title' | 'slug'
-                >;
-            }
-        >;
-    };
 };
 
 export type GatsbyImageSharpFixedFragment = {
