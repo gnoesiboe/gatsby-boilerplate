@@ -74,7 +74,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "typescript:validate": "tsc --noEmit",
-    "graphql:generate-typescript-types-and-config": "graphql-codegen --config graphql-codegen.yml"
+    "graphql:generate-typescript-types-and-config": "NODE_TLS_REJECT_UNAUTHORIZED=0 graphql-codegen --config graphql-codegen.yml"
   },
   "repository": {
     "type": "git",

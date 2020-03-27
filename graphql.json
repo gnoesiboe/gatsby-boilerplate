@@ -11901,16 +11901,6 @@
         "fields": null,
         "inputFields": [
           {
-            "name": "locale",
-            "description": "",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null
-          },
-          {
             "name": "slug",
             "description": "",
             "type": {
@@ -12173,11 +12163,42 @@
             "defaultValue": null
           },
           {
+            "name": "implementation",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SitePluginPluginOptionsImplementationFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "pathCheck",
             "description": "",
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "SitePluginPluginOptionsImplementationFilterInput",
+        "description": "",
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "info",
+            "description": "",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null
@@ -12671,18 +12692,6 @@
         "description": "",
         "fields": [
           {
-            "name": "locale",
-            "description": "",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "slug",
             "description": "",
             "args": [],
@@ -13031,12 +13040,47 @@
             "deprecationReason": null
           },
           {
+            "name": "implementation",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "SitePluginPluginOptionsImplementation",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "pathCheck",
             "description": "",
             "args": [],
             "type": {
               "kind": "SCALAR",
               "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "SitePluginPluginOptionsImplementation",
+        "description": "",
+        "fields": [
+          {
+            "name": "info",
+            "description": "",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -14039,12 +14083,6 @@
             "deprecationReason": null
           },
           {
-            "name": "context___locale",
-            "description": "",
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "context___slug",
             "description": "",
             "isDeprecated": false,
@@ -14352,6 +14390,12 @@
           },
           {
             "name": "pluginCreator___pluginOptions___icon",
+            "description": "",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginCreator___pluginOptions___implementation___info",
             "description": "",
             "isDeprecated": false,
             "deprecationReason": null
@@ -27801,6 +27845,12 @@
           },
           {
             "name": "pluginOptions___icon",
+            "description": "",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pluginOptions___implementation___info",
             "description": "",
             "isDeprecated": false,
             "deprecationReason": null
