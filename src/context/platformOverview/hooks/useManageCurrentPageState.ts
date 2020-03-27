@@ -4,7 +4,9 @@ import { extractNumericQueryParamFromLocation } from '../../../utility/queryStri
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from '@reach/router';
 
-export default function useManageCurrentPageState() {
+export default function useManageCurrentPageState(
+    resetLastScrollPosition: () => void
+) {
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -27,6 +29,8 @@ export default function useManageCurrentPageState() {
     }, [currentPageFromLocation]);
 
     const setCurrentPage = (page: number) => {
+        resetLastScrollPosition();
+
         setCurrentPageState(page);
 
         navigate(createHomePathWithFilters(page));

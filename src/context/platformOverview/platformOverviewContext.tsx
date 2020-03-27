@@ -1,23 +1,31 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+
 import React, { createContext, useContext } from 'react';
 import { PlatformOverviewItemCollection } from '../../model/types';
 import { createEmpty as createEmptyCollection } from '../../model/factory/paginatedCollectionFactory';
 import useFetchPlatformOverviewItems from './hooks/useFetchPlatformOverviewItems';
 import useManageCurrentPageState from './hooks/useManageCurrentPageState';
 import { OnPageChangeCallback } from '../../components/primitives/Pagination';
+import useStoreLastSrollPosition, {
+    ScrollPosition,
+} from './hooks/useStoreLastScrollPosition';
 
 type ContextValue = {
     isLoading: boolean;
     collection: PlatformOverviewItemCollection;
     onPageChange: OnPageChangeCallback;
     currentPage: number;
+    lastScrollPositionRef: React.MutableRefObject<ScrollPosition> | null;
+    resetLastScrollPosition: () => void;
 };
 
 const initialValue: ContextValue = {
     isLoading: false,
     collection: createEmptyCollection(),
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
     onPageChange: () => {},
     currentPage: 1,
+    lastScrollPositionRef: null,
+    resetLastScrollPosition: () => {},
 };
 
 const PlatformOverviewContext = createContext<ContextValue>(initialValue);
@@ -25,7 +33,14 @@ const PlatformOverviewContext = createContext<ContextValue>(initialValue);
 export const PlatformOverviewContextProvider: React.FC<{
     children: JSX.Element;
 }> = ({ children }) => {
-    const { onPageChange, currentPage } = useManageCurrentPageState();
+    const {
+        positionRef: lastScrollPositionRef,
+        reset: resetLastScrollPosition,
+    } = useStoreLastSrollPosition();
+
+    const { onPageChange, currentPage } = useManageCurrentPageState(
+        resetLastScrollPosition
+    );
 
     const { collection, isLoading } = useFetchPlatformOverviewItems(
         currentPage
@@ -36,6 +51,8 @@ export const PlatformOverviewContextProvider: React.FC<{
         collection,
         onPageChange,
         currentPage,
+        lastScrollPositionRef,
+        resetLastScrollPosition,
     };
 
     return (
