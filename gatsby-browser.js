@@ -8,6 +8,7 @@ import React from 'react';
 import { PlatformOverviewContextProvider } from './src/context/platformOverview/platformOverviewContext';
 import 'typeface-abril-fatface';
 import './src/styles/global.scss';
+import 'react-placeholder/lib/reactPlaceholder.css';
 import Layout from './src/components/primitives/Layout';
 
 export const wrapPageElement = ({ element }) => {
