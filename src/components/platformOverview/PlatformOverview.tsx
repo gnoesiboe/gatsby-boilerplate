@@ -3,6 +3,7 @@ import Pagination from '../primitives/Pagination';
 import { PlatformOverviewItem } from '../../model/types';
 import { usePlatformOverviewContext } from '../../context/platformOverview/platformOverviewContext';
 import PlatformOverviewItemComponent from './components/PlatformOverviewItem';
+import useScrollToLastScrollPositionOnReturnToOverview from './hooks/useScrollToLastScrollPositionOnReturnToOverview';
 
 const PlatformOverview = () => {
     const {
@@ -11,6 +12,8 @@ const PlatformOverview = () => {
         onPageChange,
         currentPage,
     } = usePlatformOverviewContext();
+
+    useScrollToLastScrollPositionOnReturnToOverview();
 
     if (isLoading) {
         return <span>Loading..</span>;
