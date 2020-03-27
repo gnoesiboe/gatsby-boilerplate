@@ -46,5 +46,5 @@ export const PlatformOverviewContextProvider: React.FC<{
 };
 
 // don't directly expose the context, but expose a custom hook that uses the context interally
-export const usePlatformOverviewContex = () =>
+export const usePlatformOverviewContext = () =>
     useContext(PlatformOverviewContext);

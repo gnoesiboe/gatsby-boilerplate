@@ -1,7 +1,7 @@
 import React from 'react';
 import Pagination from '../primitives/Pagination';
 import { PlatformOverviewItem } from '../../model/types';
-import { usePlatformOverviewContex } from '../../context/platformOverview/platformOverviewContext';
+import { usePlatformOverviewContext } from '../../context/platformOverview/platformOverviewContext';
 import PlatformOverviewItemComponent from './components/PlatformOverviewItem';
 
 const PlatformOverview = () => {
@@ -10,7 +10,7 @@ const PlatformOverview = () => {
         isLoading,
         onPageChange,
         currentPage,
-    } = usePlatformOverviewContex();
+    } = usePlatformOverviewContext();
 
     if (isLoading) {
         return <span>Loading..</span>;
