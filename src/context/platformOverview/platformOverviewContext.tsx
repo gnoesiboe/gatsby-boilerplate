@@ -6,7 +6,7 @@ import { createEmpty as createEmptyCollection } from '../../model/factory/pagina
 import useFetchPlatformOverviewItems from './hooks/useFetchPlatformOverviewItems';
 import useManageCurrentPageState from './hooks/useManageCurrentPageState';
 import { OnPageChangeCallback } from '../../components/primitives/Pagination';
-import useStoreLastSrollPosition, {
+import useStoreLastScrollPosition, {
     ScrollPosition,
 } from './hooks/useStoreLastScrollPosition';
 
@@ -36,7 +36,7 @@ export const PlatformOverviewContextProvider: React.FC<{
     const {
         positionRef: lastScrollPositionRef,
         reset: resetLastScrollPosition,
-    } = useStoreLastSrollPosition();
+    } = useStoreLastScrollPosition();
 
     const { onPageChange, currentPage } = useManageCurrentPageState(
         resetLastScrollPosition

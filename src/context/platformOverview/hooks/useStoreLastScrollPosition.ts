@@ -24,7 +24,7 @@ const resolveCurrentScrollPosition = (): ScrollPosition => {
     };
 };
 
-export default function useStoreLastSrollPosition() {
+export default function useStoreLastScrollPosition() {
     const positionRef = useRef<ScrollPosition>(resolveCurrentScrollPosition());
 
     const isHomepageMatch = useMatch(homePath);
