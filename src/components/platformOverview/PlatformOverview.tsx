@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { createPlatformDetailPath } from '../../routing/urlGenerator';
 import Pagination from '../primitives/Pagination';
 import { PlatformOverviewItem } from '../../model/types';
 import { usePlatformOverviewContex } from '../../context/platformOverview/platformOverviewContext';
+import PlatformOverviewItemComponent from './components/PlatformOverviewItem';
 
 const PlatformOverview = () => {
     const {
@@ -20,9 +19,9 @@ const PlatformOverview = () => {
     return (
         <>
             <ul>
-                {collection.items.map(({ id, slug, title }) => (
-                    <li key={id}>
-                        <Link to={createPlatformDetailPath(slug)}>{title}</Link>
+                {collection.items.map((item) => (
+                    <li key={item.id}>
+                        <PlatformOverviewItemComponent item={item} />
                     </li>
                 ))}
             </ul>
