@@ -3,7 +3,7 @@ import { fetchAll as fetchAllPlatforms } from '../../../contentful/repository/pl
 import { useState, useEffect } from 'react';
 import { createEmpty as createEmptyCollection } from '../../../model/factory/paginatedCollectionFactory';
 
-const noOfResultsPerPage = 1;
+const noOfResultsPerPage = 10;
 
 export default function useFetchPlatformOverviewItems(currentPage: number) {
     const [collection, setCollection] = useState<
