@@ -1,13 +1,10 @@
-// Settings
-@import '~@freshheads/maatcss/settings/breakpoints';
-@import 'settings/colors';
-
 // Libs
 @import '~sass-mq';
 @import '~normalize.css';
 
-// Tools
-@import '~@freshheads/maatcss/tools/button-variant';
+// Settings
+@import 'settings/colors';
+@import 'settings/typography';
 
 // Generic
 @import '~@freshheads/maatcss/generic/reboot';
@@ -19,7 +16,3 @@
 @import '~@freshheads/maatcss/layout/layout';
 @import '~@freshheads/maatcss/layout/layout-sizing';
 @import '~@freshheads/maatcss/layout/layout-align';
-
-// Components
-@import '~@freshheads/maatcss/components/button';
-@import 'components/header';

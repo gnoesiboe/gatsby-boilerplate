@@ -1,0 +1,13 @@
+@use '../../../styles/settings/typography';
+
+.heading {
+    font-family: typography.$heading-font-family;
+}
+
+.heading--uppercase {
+    text-transform: uppercase;
+}
+
+.heading--flatten {
+    margin: 0;
+}

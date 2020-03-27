@@ -7,6 +7,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
     "@contentful/rich-text-types": "^14.1.0",
+    "classnames": "^2.2.6",
     "contentful": "^7.14.0",
     "gatsby": "^2.20.4",
     "gatsby-image": "^2.3.1",
@@ -24,8 +25,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
+    "sass": "^1.26.3",
     "react-js-pagination": "^3.0.3",
-    "sass": "^1.26.3"
+    "sass": "^1.26.3",
+    "typeface-abril-fatface": "0.0.72"
   },
   "devDependencies": {
     "@freshheads/maatcss": "^1.0.3",
@@ -33,6 +36,7 @@
     "@graphql-codegen/introspection": "^1.13.1",
     "@graphql-codegen/typescript": "^1.13.1",
     "@graphql-codegen/typescript-operations": "^1.13.1",
+    "@types/classnames": "^2.2.10",
     "@types/node": "^13.9.3",
     "@types/qs": "^6.9.1",
     "@types/react": "^16.9.25",
@@ -66,7 +70,7 @@
     "prettier:write": "npm run prettier -- --write",
     "lint:js": "eslint --ext .js,.jsx,.ts,.tsx ./src",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "lint:css": "stylelint ./src/styles",
+    "lint:css": "stylelint '**/*.scss'",
     "lint:css:fix": "npm run lint:css -- --fix",
     "prod:build": "gatsby build",
     "prod:serve": "gatsby serve",

@@ -4,4 +4,5 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import './src/styles/app.scss';
+import 'typeface-abril-fatface';
+import './src/styles/global.scss';

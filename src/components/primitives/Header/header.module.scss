@@ -1,0 +1,21 @@
+@use '../../../styles/settings/colors';
+@use '../../../styles/tools/media-queries' as *;
+
+.header {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: colors.$brand-primary;
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    @include mq($from: sm) {
+        background-color: #000;
+    }
+}
